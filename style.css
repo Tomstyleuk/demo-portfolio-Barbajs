@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'garamond';
+  src: url("font/garamond/AGaramondPro-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'garamond';
+  src: url("font/garamond/AGaramondPro-Italic.otf");
+  font-style: italic;
+}
+
 body,
 html {
   width: 100%;
@@ -6,6 +19,8 @@ html {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'garamond';
+  font-style: normal;
 }
 
 li {
@@ -200,7 +215,7 @@ img {
   .wrapper main[data-state="home"] {
     background: #261f1f;
     color: #ffffff;
-    padding: 0 20px;
+    padding: 100px 20px 0;
   }
 }
 
@@ -219,7 +234,7 @@ img {
 
 @media screen and (max-width: 1024px) {
   .wrapper main[data-state="home"] section.item {
-    margin-top: 130px;
+    margin-top: 50px;
     height: auto;
     scroll-snap-align: unset;
   }
@@ -247,7 +262,8 @@ img {
     -ms-grid-columns: 2fr auto;
         grid-template-columns: 2fr auto;
     position: relative;
-    height: 50vh;
+    height: 70vh;
+    gap: 20px;
   }
 }
 
@@ -264,7 +280,7 @@ img {
         -ms-flex-order: 1;
             order: 1;
     max-width: 200px;
-    height: auto;
+    height: 250px;
     width: 100%;
   }
 }
@@ -272,7 +288,7 @@ img {
 @media screen and (max-width: 1024px) {
   .wrapper main[data-state="home"] .inner_item.home .img_container img {
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 }
 
@@ -298,6 +314,7 @@ img {
 @media screen and (max-width: 1024px) {
   .wrapper main[data-state="home"] .inner_item.home h1 {
     font-size: 50px;
+    font-weight: bold;
     -webkit-writing-mode: unset;
         -ms-writing-mode: unset;
             writing-mode: unset;
@@ -331,10 +348,13 @@ img {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
-    -ms-flex-item-align: end;
-        -ms-grid-row-align: end;
-        align-self: end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     text-align: left;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     max-width: 140px;
     margin: 0 10px;
   }
@@ -380,6 +400,8 @@ img {
 @media screen and (max-width: 1024px) {
   .wrapper main[data-state="home"] .inner_item.home .project_info .service p {
     margin: 8px 0;
+    font-size: 1.1em;
+    font-style: normal;
   }
 }
 
@@ -511,6 +533,13 @@ img {
   font-size: 50px;
 }
 
+@media screen and (max-width: 1024px) {
+  .wrapper main .detail_wrapper .inner_detail h2 {
+    font-size: 40px;
+    font-weight: normal;
+  }
+}
+
 .wrapper main .detail_wrapper .inner_detail p {
   font-size: 26px;
   font-style: italic;
@@ -521,6 +550,7 @@ img {
 @media screen and (max-width: 1024px) {
   .wrapper main .detail_wrapper .inner_detail p {
     font-size: 20px;
+    font-style: normal;
   }
 }
 
@@ -595,9 +625,9 @@ img {
 }
 
 .wrapper main .detail_wrapper .inner_detail .img_descr p {
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   margin: 0;
 }
 
@@ -666,14 +696,10 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   width: 100vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  margin-left: calc((100vw - min(1200px, 100%)) / -2);
-  gap: 100px;
   position: absolute;
   left: 0;
 }
@@ -685,11 +711,14 @@ img {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     position: unset;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
   }
 }
 
 .wrapper main .detail_wrapper .inner_detail .collection_wrapper .items figure {
-  max-width: 300px;
+  width: 150px;
   margin: 0;
   opacity: 0;
   -webkit-transform: translateY(200px) rotate(-10deg);
@@ -700,7 +729,7 @@ img {
 
 @media screen and (max-width: 1024px) {
   .wrapper main .detail_wrapper .inner_detail .collection_wrapper .items figure {
-    max-width: 190px;
+    max-width: 180px;
   }
   .wrapper main .detail_wrapper .inner_detail .collection_wrapper .items figure:nth-child(2n) {
     margin-top: 280px;
@@ -822,7 +851,7 @@ img {
 
 @media screen and (max-width: 1024px) {
   .wrapper header nav label.mobile_detail {
-    color: #000000 !important;
+    color: #000000;
   }
 }
 /*# sourceMappingURL=style.css.map */

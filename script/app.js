@@ -130,7 +130,7 @@ btn.forEach((i, index) => {
                 }
               }
 
-              itemsWrapper.style.transform = `translateX(${scrollY / 5}px)`;
+              // itemsWrapper.style.transform = `translateX(${scrollY / 5}px)`;
               collectionTitle.style.transform = `translateY(-${scrollY / 5}px)`;
 
               if (window.innerWidth < 1025) {
@@ -151,7 +151,6 @@ btn.forEach((i, index) => {
               if (main.dataset.state !== 'home') {
                 let labelOpen = document.querySelector(".open");
                 labelOpen.classList.add('mobile_detail');
-
               } else {
                 labelOpen.classList.remove('mobile_detail');
               }

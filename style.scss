@@ -3,6 +3,18 @@ $black: #000000;
 $mobile_home_bg: #261f1f;
 $mobile_font_color: #ffffff;
 $header_font: "Helvetica Neue";
+@font-face {
+  font-family: 'garamond';
+  src: url('font/garamond/AGaramondPro-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'garamond';
+  src: url('font/garamond/AGaramondPro-Italic.otf');
+  font-style: italic;
+}
+
 
 body,
 html {
@@ -11,6 +23,8 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'garamond';
+  font-style: normal;
 }
 
 li {
@@ -172,7 +186,7 @@ img {
       @media screen and (max-width: 1024px) {
         background: $mobile_home_bg;
         color: $mobile_font_color;
-        padding: 0 20px;
+        padding: 100px 20px 0;
       }
 
       [data-scene="gallery"] {
@@ -187,7 +201,7 @@ img {
         scroll-snap-align: start;
         height: 100vh;
         @media screen and (max-width: 1024px) {
-          margin-top: 130px;
+          margin-top: 50px;
           height: auto;
           scroll-snap-align: unset;
         }
@@ -211,7 +225,8 @@ img {
         @media screen and (max-width: 1024px) {
           grid-template-columns: 2fr auto;
           position: relative;
-          height: 50vh;
+          height: 70vh;
+          gap: 20px;
         }
 
         .img_container {
@@ -220,14 +235,14 @@ img {
           @media screen and (max-width: 1024px) {
             order: 1;
             max-width: 200px;
-            height: auto;
+            height: 250px;
             width: 100%;
           }
 
           img {
             @media screen and (max-width: 1024px) {
               width: 100%;
-              height: auto;
+              height: 100%;
             }
           }
         }
@@ -247,6 +262,7 @@ img {
           mix-blend-mode: overlay;
           @media screen and (max-width: 1024px) {
             font-size: 50px;
+            font-weight: bold;
             writing-mode: unset;
             order: 2;
             display: inline-block;
@@ -269,8 +285,9 @@ img {
           place-content: center;
           @media screen and (max-width: 1024px) {
             order: 3;
-            align-self: end;
+            align-self: center;
             text-align: left;
+            height: fit-content;
             max-width: 140px;
             margin: 0 10px;
           }
@@ -307,6 +324,8 @@ img {
             @media screen and (max-width: 1024px) {
               p {
                 margin: 8px 0;
+                font-size: 1.1em;
+                font-style: normal;
               }
             }
           }
@@ -423,6 +442,10 @@ img {
           text-align: left;
           font-style: italic;
           font-size: 50px;
+          @media screen and (max-width: 1024px) {
+            font-size: 40px;
+            font-weight: normal;
+          }
         }
         p {
           font-size: 26px;
@@ -431,6 +454,7 @@ img {
           text-align: left;
           @media screen and (max-width: 1024px) {
             font-size: 20px;
+            font-style: normal;
           }
         }
 
@@ -476,7 +500,7 @@ img {
             }
           }
           p {
-            align-self: start;
+            align-self: center;
             margin: 0;
             @media screen and (max-width: 1024px) {
               margin: 20px 0;
@@ -528,12 +552,12 @@ img {
           .items {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: baseline;
             width: 100vw;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            margin-left: calc((100vw - min(1200px, 100%)) / -2);
-            gap: 100px;
+            // overflow-x: hidden;
+            // overflow-y: hidden;
+            // margin-left: calc((100vw - min(1200px, 100%)) / -2);
+            // gap: 10px;
             position: absolute;
             left: 0;
             @media screen and (max-width: 1024px) {
@@ -541,16 +565,17 @@ img {
               margin-top: 100px;
               flex-wrap: wrap;
               position: unset;
+              align-items: unset;
             }
 
             figure {
-              max-width: 300px;
+              width: 150px;
               margin: 0;
               opacity: 0;
               transform: translateY(200px) rotate(-10deg);
               transition: all 0.6s cubic-bezier(0.5, 0, 0.5, 1);
               @media screen and (max-width: 1024px) {
-                max-width: 190px;
+                max-width: 180px;
                 &:nth-child(2n) {
                   margin-top: 280px;
                 }
@@ -642,7 +667,7 @@ img {
       nav {
         label {
           &.mobile_detail {
-            color: $black !important;
+            color: $black;
           }
         }
       }

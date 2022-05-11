@@ -252,7 +252,8 @@ img {
           display: grid;
           text-align: center;
           align-content: center;
-          writing-mode: sideways-lr;
+          // writing-mode: sideways-lr;
+          writing-mode: tb;
           color: $black;
           font-size: 10vw;
           font-weight: lighter;
@@ -525,7 +526,8 @@ img {
             text-align: center;
             font-style: italic;
             font-size: 160px;
-            writing-mode: sideways-rl;
+            // writing-mode: sideways-rl;
+            writing-mode: tb;
             margin: 0 auto;
             position: absolute;
             z-index: 0;

@@ -515,6 +515,10 @@ img {
           height: 60vh;
           width: 100%;
           overflow: hidden;
+          @media screen and (min-width: 1600px) {
+            width: 100vw;
+            margin-left: calc((100vw - min(1200px, 100%))/-2);
+          }
           @media screen and (max-width: 1024px) {
             padding: 100px 0;
             height: auto;
@@ -556,18 +560,18 @@ img {
             justify-content: space-between;
             align-items: baseline;
             width: 100vw;
-            // overflow-x: hidden;
-            // overflow-y: hidden;
-            // margin-left: calc((100vw - min(1200px, 100%)) / -2);
-            // gap: 10px;
             position: absolute;
             left: 0;
+            @media screen and (min-width: 1600px) {
+              justify-content: space-around;
+              margin: 0 auto;
+            }
             @media screen and (max-width: 1024px) {
               gap: 10px;
               margin-top: 100px;
               flex-wrap: wrap;
-              position: unset;
               align-items: unset;
+              position: unset;
             }
 
             figure {

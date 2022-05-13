@@ -27,44 +27,6 @@ html {
   font-style: normal;
 }
 
-.loader_inner {
-  width: 100vw;
-  height: 100vh;
-  background: lightgrey;
-  transition: all 1s;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000000;
-
-    .spinner {
-      width: 3%;
-      height: 4%;
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      background: rgb(195, 168, 73);
-      border-radius: 100%;
-      animation: scaleout 1.3s infinite ease-in-out;
-    }
-    
-    @keyframes scaleout {
-      0% {
-        transform: scale(0);
-      } 100% {
-        transform: scale(1.0);
-        opacity: 0;
-      }
-    }
-
-  &.loaded {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
 
 li {
   list-style: none;

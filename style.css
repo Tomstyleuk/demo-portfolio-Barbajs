@@ -23,6 +23,62 @@ html {
   font-style: normal;
 }
 
+.loader_inner {
+  width: 100vw;
+  height: 100vh;
+  background: lightgrey;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000000;
+}
+
+.loader_inner .spinner {
+  width: 3%;
+  height: 4%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  background: #c3a849;
+  border-radius: 100%;
+  -webkit-animation: scaleout 1.3s infinite ease-in-out;
+          animation: scaleout 1.3s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.loader_inner.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 li {
   list-style: none;
 }

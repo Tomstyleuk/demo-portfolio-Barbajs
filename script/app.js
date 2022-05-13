@@ -1,5 +1,8 @@
-window.addEventListener('load', () => {
-
+// window.addEventListener('load', () => {
+  window.addEventListener("load",()=>{
+    const loader = document.querySelector(".loader_inner");
+    loader.classList.add('loaded');
+  })
 
   const btn = [...document.querySelectorAll(".btn")];
   const main = document.querySelector("main");
@@ -206,4 +209,4 @@ window.addEventListener('load', () => {
       }
     });
   }
-})
+// })

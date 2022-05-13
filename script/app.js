@@ -24,12 +24,15 @@ const firstImgAnimate = () => {
 }
 
 if (window.innerWidth > 1025) {
-    const elem = document.querySelector('.item[data-item="one"]');
-    const callback = () => {
-      firstImgAnimate();
-    };
-    imagesLoaded(elem, callback)
+  const elem = document.querySelector('.item[data-item="one"]');
+  const callback = () => {
+    setTimeout(firstImgAnimate(), 100);
+  };
+  imagesLoaded(elem, callback)
 }
+
+
+
 
 logo.addEventListener('click', () => {
   if (main.dataset.state = 'detail') {

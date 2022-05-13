@@ -13,6 +13,9 @@ const navClose = document.querySelector(".close");
 const navMenus = [...document.querySelectorAll(".menu_lists li")];
 let detailImg;
 
+
+
+
 if (window.innerWidth > 1025) {
   const elem = document.querySelector('.item[data-item="one"] img');
 
@@ -22,6 +25,9 @@ if (window.innerWidth > 1025) {
     setTimeout(firstImgAnimate(), 500);
   };
   imagesLoaded(elem, callback)
+} else if (window.innerWidth < 1024) {
+  document.querySelector('body').classList.remove('hide');
+  document.querySelector(".loading-animation").classList.add('loaded');
 }
 
 const tl = new TimelineMax();

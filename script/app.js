@@ -15,10 +15,10 @@ let detailImg;
 
 if (window.innerWidth > 1025) {
   const elem = document.querySelector('.item[data-item="one"] img');
+
   const callback = () => {
     document.querySelector('body').classList.remove('hide');
-    const loader = document.querySelector(".loading-animation");
-    loader.classList.add('loaded');
+    document.querySelector(".loading-animation").classList.add('loaded');
     setTimeout(firstImgAnimate(), 500);
   };
   imagesLoaded(elem, callback)

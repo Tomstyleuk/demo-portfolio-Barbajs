@@ -1,4 +1,3 @@
-// window.addEventListener('load', () => {
 const btn = [...document.querySelectorAll(".btn")];
 const main = document.querySelector("main");
 const logo = document.querySelector("#logo");
@@ -14,16 +13,10 @@ const navClose = document.querySelector(".close");
 const navMenus = [...document.querySelectorAll(".menu_lists li")];
 let detailImg;
 
-
-/** 1.最初cssでbody opacity 0にする
- * when first img will be loaded, then remove opacity:0 change it to 1
- */
-
 if (window.innerWidth > 1025) {
   const elem = document.querySelector('.item[data-item="one"] img');
   const callback = () => {
-    const body = document.querySelector('body');
-    body.classList.remove('hide')
+    document.querySelector('body').classList.remove('hide');
     const loader = document.querySelector(".loading-animation");
     loader.classList.add('loaded');
     setTimeout(firstImgAnimate(), 500);
@@ -215,4 +208,3 @@ function eleInView(entries) {
     }
   });
 }
-// })

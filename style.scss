@@ -30,10 +30,6 @@ html {
 body {
   opacity: 1;
   visibility: visible;
-  &.hide {
-    opacity: 0;
-    visibility: hidden;
-  }
 }
 
 

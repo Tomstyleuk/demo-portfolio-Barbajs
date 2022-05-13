@@ -23,6 +23,16 @@ html {
   font-style: normal;
 }
 
+body {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .loading-animation {
   height: 100vh;
   width: 100vw;

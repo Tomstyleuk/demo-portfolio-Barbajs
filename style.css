@@ -23,6 +23,237 @@ html {
   font-style: normal;
 }
 
+.loading-animation {
+  height: 100vh;
+  width: 100vw;
+  background: #333333;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+}
+
+.loading-animation.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-animation, .loading-animation * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.loading-animation .spinner {
+  height: calc(65px / 7.5);
+  width: calc(65px / 7.5);
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+  top: 50%;
+  left: 50%;
+  background-color: #f2f252;
+  position: absolute;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.loading-animation .spinner.big {
+  height: calc(65px / 3);
+  width: calc(65px / 3);
+  -webkit-animation: spinner-animation-child-big 2s infinite;
+          animation: spinner-animation-child-big 2s infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.loading-animation .spinner:nth-child(2n+0) {
+  margin-right: 0;
+}
+
+.loading-animation .spinner.child-1 {
+  -webkit-animation-name: spinner-animation-child-1;
+          animation-name: spinner-animation-child-1;
+  -webkit-animation-delay: calc(100ms * 1);
+          animation-delay: calc(100ms * 1);
+}
+
+.loading-animation .spinner.child-2 {
+  -webkit-animation-name: spinner-animation-child-2;
+          animation-name: spinner-animation-child-2;
+  -webkit-animation-delay: calc(100ms * 2);
+          animation-delay: calc(100ms * 2);
+}
+
+.loading-animation .spinner.child-3 {
+  -webkit-animation-name: spinner-animation-child-3;
+          animation-name: spinner-animation-child-3;
+  -webkit-animation-delay: calc(100ms * 3);
+          animation-delay: calc(100ms * 3);
+}
+
+.loading-animation .spinner.child-4 {
+  -webkit-animation-name: spinner-animation-child-4;
+          animation-name: spinner-animation-child-4;
+  -webkit-animation-delay: calc(100ms * 4);
+          animation-delay: calc(100ms * 4);
+}
+
+.loading-animation .spinner.child-5 {
+  -webkit-animation-name: spinner-animation-child-5;
+          animation-name: spinner-animation-child-5;
+  -webkit-animation-delay: calc(100ms * 5);
+          animation-delay: calc(100ms * 5);
+}
+
+.loading-animation .spinner.child-6 {
+  -webkit-animation-name: spinner-animation-child-6;
+          animation-name: spinner-animation-child-6;
+  -webkit-animation-delay: calc(100ms * 6);
+          animation-delay: calc(100ms * 6);
+}
+
+.loading-animation .spinner.child-7 {
+  -webkit-animation-name: spinner-animation-child-7;
+          animation-name: spinner-animation-child-7;
+  -webkit-animation-delay: calc(100ms * 7);
+          animation-delay: calc(100ms * 7);
+}
+
+.loading-animation .spinner.child-8 {
+  -webkit-animation-name: spinner-animation-child-8;
+          animation-name: spinner-animation-child-8;
+  -webkit-animation-delay: calc(100ms * 8);
+          animation-delay: calc(100ms * 8);
+}
+
+@-webkit-keyframes spinner-animation-child-1 {
+  50% {
+    -webkit-transform: translate(-325%, -325%);
+            transform: translate(-325%, -325%);
+  }
+}
+
+@keyframes spinner-animation-child-1 {
+  50% {
+    -webkit-transform: translate(-325%, -325%);
+            transform: translate(-325%, -325%);
+  }
+}
+
+@-webkit-keyframes spinner-animation-child-2 {
+  50% {
+    -webkit-transform: translate(0, -325%);
+            transform: translate(0, -325%);
+  }
+}
+
+@keyframes spinner-animation-child-2 {
+  50% {
+    -webkit-transform: translate(0, -325%);
+            transform: translate(0, -325%);
+  }
+}
+
+@-webkit-keyframes spinner-animation-child-3 {
+  50% {
+    -webkit-transform: translate(325%, -325%);
+            transform: translate(325%, -325%);
+  }
+}
+
+@keyframes spinner-animation-child-3 {
+  50% {
+    -webkit-transform: translate(325%, -325%);
+            transform: translate(325%, -325%);
+  }
+}
+
+@-webkit-keyframes spinner-animation-child-4 {
+  50% {
+    -webkit-transform: translate(325%, 0);
+            transform: translate(325%, 0);
+  }
+}
+
+@keyframes spinner-animation-child-4 {
+  50% {
+    -webkit-transform: translate(325%, 0);
+            transform: translate(325%, 0);
+  }
+}
+
+@-webkit-keyframes spinner-animation-child-5 {
+  50% {
+    -webkit-transform: translate(325%, 325%);
+            transform: translate(325%, 325%);
+  }
+}
+
+@keyframes spinner-animation-child-5 {
+  50% {
+    -webkit-transform: translate(325%, 325%);
+            transform: translate(325%, 325%);
+  }
+}
+
+@-webkit-keyframes spinner-animation-child-6 {
+  50% {
+    -webkit-transform: translate(0, 325%);
+            transform: translate(0, 325%);
+  }
+}
+
+@keyframes spinner-animation-child-6 {
+  50% {
+    -webkit-transform: translate(0, 325%);
+            transform: translate(0, 325%);
+  }
+}
+
+@-webkit-keyframes spinner-animation-child-7 {
+  50% {
+    -webkit-transform: translate(-325%, 325%);
+            transform: translate(-325%, 325%);
+  }
+}
+
+@keyframes spinner-animation-child-7 {
+  50% {
+    -webkit-transform: translate(-325%, 325%);
+            transform: translate(-325%, 325%);
+  }
+}
+
+@-webkit-keyframes spinner-animation-child-8 {
+  50% {
+    -webkit-transform: translate(-325%, 0);
+            transform: translate(-325%, 0);
+  }
+}
+
+@keyframes spinner-animation-child-8 {
+  50% {
+    -webkit-transform: translate(-325%, 0);
+            transform: translate(-325%, 0);
+  }
+}
+
+@-webkit-keyframes spinner-animation-child-big {
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+
+@keyframes spinner-animation-child-big {
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+
 li {
   list-style: none;
 }

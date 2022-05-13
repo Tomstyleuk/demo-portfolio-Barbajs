@@ -14,6 +14,16 @@ const navClose = document.querySelector(".close");
 const navMenus = [...document.querySelectorAll(".menu_lists li")];
 let detailImg;
 
+if (window.innerWidth > 1025) {
+  const elem = document.querySelector('.item[data-item="one"] img');
+  const callback = () => {
+    const loader = document.querySelector(".loading-animation");
+    loader.classList.add('loaded');
+    setTimeout(firstImgAnimate(), 500);
+  };
+  imagesLoaded(elem, callback)
+}
+
 const tl = new TimelineMax();
 const firstImgAnimate = () => {
   tl.fromTo(firstImg, 1.8, { height: "0", width: "0" }, { height: "100vh", width: "auto", ease: Expo.easeInOut })
@@ -22,17 +32,6 @@ const firstImgAnimate = () => {
     .fromTo(service, 1, { opacity: "0", transform: "translateY(200px)" }, { opacity: "1", transform: "translateY(0)", ease: Power2.easeInOut }, "-=0.6")
     .fromTo(firstBtn, 0.8, { opacity: "0", transform: "translateY(200px)" }, { opacity: "1", transform: "translateY(0)", ease: Power2.easeInOut }, "-=0.6")
 }
-
-if (window.innerWidth > 1025) {
-  const elem = document.querySelector('.item[data-item="one"]');
-  const callback = () => {
-    setTimeout(firstImgAnimate(), 100);
-  };
-  imagesLoaded(elem, callback)
-}
-
-
-
 
 logo.addEventListener('click', () => {
   if (main.dataset.state = 'detail') {

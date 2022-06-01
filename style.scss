@@ -3,15 +3,15 @@ $black: #000000;
 $mobile_home_bg: #261f1f;
 $mobile_font_color: #ffffff;
 $header_font: "Helvetica Neue";
+
 @font-face {
-  font-family: 'garamond';
-  src: url('font/garamond/AGaramondPro-Regular.otf');
-  font-weight: normal;
+  font-family: 'bon';
+  src: url('./font/bon/BonVivant-Regular.otf');
   font-style: normal;
 }
 @font-face {
-  font-family: 'garamond';
-  src: url('font/garamond/AGaramondPro-Italic.otf');
+  font-family: 'bon';
+  src: url('font/bon/BonVivantSerif-Bold.otf');
   font-style: italic;
 }
 
@@ -23,7 +23,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'garamond';
+  font-family: 'bon';
   font-style: normal;
 }
 

@@ -595,6 +595,12 @@ img {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .wrapper main[data-state="home"] .inner_item.home .project_info .client {
+    margin: 0;
+  }
+}
+
 .wrapper main[data-state="home"] .inner_item.home .project_info div {
   margin: 30px 0;
 }
@@ -635,8 +641,9 @@ img {
 @media screen and (max-width: 1024px) {
   .wrapper main[data-state="home"] .inner_item.home .project_info .service p {
     margin: 8px 0;
-    font-size: 1.1em;
-    font-style: normal;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: lighter;
   }
 }
 
@@ -776,6 +783,7 @@ img {
 }
 
 .wrapper main .detail_wrapper .inner_detail p {
+  font-family: auto;
   font-size: 26px;
   font-style: italic;
   line-height: 1.25em;
@@ -785,7 +793,6 @@ img {
 @media screen and (max-width: 1024px) {
   .wrapper main .detail_wrapper .inner_detail p {
     font-size: 20px;
-    font-style: normal;
   }
 }
 

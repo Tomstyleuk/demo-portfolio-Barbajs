@@ -437,6 +437,12 @@ img {
             margin: 0 10px;
           }
 
+          @media screen and (max-width: 1024px) {
+            .client {
+              margin: 0;
+            }
+          }
+
           div {
             margin: 30px 0;
           }
@@ -469,8 +475,9 @@ img {
             @media screen and (max-width: 1024px) {
               p {
                 margin: 8px 0;
-                font-size: 1.1em;
-                font-style: normal;
+                font-size: 1em;
+                font-style: italic;
+                font-weight: lighter;
               }
             }
           }
@@ -593,13 +600,13 @@ img {
           }
         }
         p {
+          font-family: auto;
           font-size: 26px;
           font-style: italic;
           line-height: 1.25em;
           text-align: left;
           @media screen and (max-width: 1024px) {
             font-size: 20px;
-            font-style: normal;
           }
         }
 

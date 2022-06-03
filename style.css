@@ -10,6 +10,12 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: 'bon';
+  src: url("font/bon/BonVivantSerif.otf");
+  font-style: italic;
+}
+
 body,
 html {
   width: 100%;
@@ -648,6 +654,7 @@ img {
 }
 
 .wrapper main[data-state="home"] .inner_item.home .project_info .btn a {
+  text-transform: uppercase;
   position: relative;
 }
 
@@ -754,9 +761,9 @@ img {
 }
 
 .wrapper main .detail_wrapper .img_container img {
-  max-height: 50vh !important;
-  -o-object-fit: contain;
-     object-fit: contain;
+  max-height: 60vh !important;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .wrapper main .detail_wrapper .inner_detail .detail_img {

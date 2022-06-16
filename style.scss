@@ -5,21 +5,20 @@ $mobile_font_color: #ffffff;
 $header_font: "Helvetica Neue";
 
 @font-face {
-  font-family: 'bon';
-  src: url('./font/bon/BonVivant-Regular.otf');
+  font-family: "bon";
+  src: url("./font/bon/BonVivant-Regular.otf");
   font-style: normal;
 }
 @font-face {
-  font-family: 'bon';
-  src: url('font/bon/BonVivantSerif-Bold.otf');
+  font-family: "bon";
+  src: url("font/bon/BonVivantSerif-Bold.otf");
   font-style: italic;
 }
 @font-face {
-  font-family: 'bon';
-  src: url('font/bon/BonVivantSerif.otf');
+  font-family: "bon";
+  src: url("font/bon/BonVivantSerif.otf");
   font-style: italic;
 }
-
 
 body,
 html {
@@ -28,7 +27,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'bon';
+  font-family: "bon";
   font-style: normal;
 }
 
@@ -36,7 +35,6 @@ body {
   opacity: 1;
   visibility: visible;
 }
-
 
 .loading-animation {
   height: 100vh;
@@ -55,7 +53,8 @@ body {
   pointer-events: none;
 }
 
-.loading-animation, .loading-animation * {
+.loading-animation,
+.loading-animation * {
   box-sizing: border-box;
 }
 
@@ -77,9 +76,9 @@ body {
   animation-delay: 0.5s;
 }
 
-.loading-animation .spinner:nth-child(2n+0) {
-   margin-right: 0;
- }
+.loading-animation .spinner:nth-child(2n + 0) {
+  margin-right: 0;
+}
 
 .loading-animation .spinner.child-1 {
   animation-name: spinner-animation-child-1;
@@ -120,7 +119,6 @@ body {
   animation-name: spinner-animation-child-8;
   animation-delay: calc(100ms * 8);
 }
-
 
 @keyframes spinner-animation-child-1 {
   50% {
@@ -492,10 +490,11 @@ img {
               text-transform: uppercase;
               position: relative;
               @media screen and (max-width: 1024px) {
-                border: solid 1px white;
-                padding: 6px 20px;
                 background: white;
+                border: solid 1px white;
                 color: $black;
+                font-size: 0.8rem;
+                padding: 6px 20px;
               }
 
               &::after {
@@ -674,7 +673,7 @@ img {
           overflow: hidden;
           @media screen and (min-width: 1600px) {
             width: 100vw;
-            margin-left: calc((100vw - min(1200px, 100%))/-2);
+            margin-left: calc((100vw - min(1200px, 100%)) / -2);
           }
           @media screen and (max-width: 1024px) {
             padding: 100px 0;

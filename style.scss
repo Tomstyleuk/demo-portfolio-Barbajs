@@ -5,21 +5,22 @@ $mobile_font_color: #ffffff;
 $header_font: "Helvetica Neue";
 
 @font-face {
-  font-family: 'bon';
-  src: url('./font/bon/BonVivant-Regular.otf');
+  font-family: "bon";
+  src: url("./font/bon/BonVivant-Regular.otf");
   font-style: normal;
 }
+
 @font-face {
-  font-family: 'bon';
-  src: url('font/bon/BonVivantSerif-Bold.otf');
-  font-style: italic;
-}
-@font-face {
-  font-family: 'bon';
-  src: url('font/bon/BonVivantSerif.otf');
+  font-family: "bon";
+  src: url("font/bon/BonVivantSerif-Bold.otf");
   font-style: italic;
 }
 
+@font-face {
+  font-family: "bon";
+  src: url("font/bon/BonVivantSerif.otf");
+  font-style: italic;
+}
 
 body,
 html {
@@ -28,7 +29,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'bon';
+  font-family: "bon";
   font-style: normal;
 }
 
@@ -36,7 +37,6 @@ body {
   opacity: 1;
   visibility: visible;
 }
-
 
 .loading-animation {
   height: 100vh;
@@ -55,7 +55,8 @@ body {
   pointer-events: none;
 }
 
-.loading-animation, .loading-animation * {
+.loading-animation,
+.loading-animation * {
   box-sizing: border-box;
 }
 
@@ -77,9 +78,9 @@ body {
   animation-delay: 0.5s;
 }
 
-.loading-animation .spinner:nth-child(2n+0) {
-   margin-right: 0;
- }
+.loading-animation .spinner:nth-child(2n + 0) {
+  margin-right: 0;
+}
 
 .loading-animation .spinner.child-1 {
   animation-name: spinner-animation-child-1;
@@ -120,7 +121,6 @@ body {
   animation-name: spinner-animation-child-8;
   animation-delay: calc(100ms * 8);
 }
-
 
 @keyframes spinner-animation-child-1 {
   50% {
@@ -218,8 +218,10 @@ img {
 
     h2 {
       text-transform: uppercase;
+
       a {
         font-weight: lighter;
+
         @media screen and (max-width: 1024px) {
           color: $mobile_font_color;
         }
@@ -234,6 +236,7 @@ img {
       .open,
       .close {
         position: relative;
+
         @media screen and (max-width: 1024px) {
           color: $mobile_font_color;
         }
@@ -260,16 +263,18 @@ img {
         display: inline-block;
         cursor: pointer;
       }
+
       .close {
         display: none;
         pointer-events: none;
       }
 
-      #menu:checked ~ .open {
+      #menu:checked~.open {
         display: none;
         pointer-events: none;
       }
-      #menu:checked ~ .close {
+
+      #menu:checked~.close {
         display: inline-block;
         cursor: pointer;
         color: white;
@@ -286,7 +291,7 @@ img {
         display: none;
       }
 
-      #menu:checked ~ .menu_bg {
+      #menu:checked~.menu_bg {
         display: block;
         position: fixed;
         z-index: 1;
@@ -298,7 +303,7 @@ img {
         margin: 0;
       }
 
-      #menu:checked ~ .menu_bg .menu_lists {
+      #menu:checked~.menu_bg .menu_lists {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -332,6 +337,7 @@ img {
       scroll-snap-type: y mandatory;
       overflow: auto;
       height: 100vh;
+
       @media screen and (max-width: 1024px) {
         background: $mobile_home_bg;
         color: $mobile_font_color;
@@ -349,6 +355,7 @@ img {
       section.item {
         scroll-snap-align: start;
         height: 100vh;
+
         @media screen and (max-width: 1024px) {
           margin-top: 50px;
           height: auto;
@@ -381,6 +388,7 @@ img {
         .img_container {
           height: 100%;
           align-self: center;
+
           @media screen and (max-width: 1024px) {
             order: 1;
             max-width: 200px;
@@ -410,6 +418,7 @@ img {
           margin: 20px auto;
           word-break: break-word;
           mix-blend-mode: overlay;
+
           @media screen and (max-width: 1024px) {
             font-size: 50px;
             font-weight: bold;
@@ -433,6 +442,7 @@ img {
         .project_info {
           display: grid;
           place-content: center;
+
           @media screen and (max-width: 1024px) {
             order: 3;
             align-self: center;
@@ -451,15 +461,18 @@ img {
           div {
             margin: 30px 0;
           }
+
           h3 {
             font-weight: bold;
             font-size: 2vw;
             font-style: italic;
             margin: 0 0 10px 0;
+
             @media screen and (max-width: 1024px) {
               font-size: 8vw;
             }
           }
+
           p,
           a {
             color: $black;
@@ -477,6 +490,7 @@ img {
             p:nth-child(1) {
               margin-bottom: 0 !important;
             }
+
             @media screen and (max-width: 1024px) {
               p {
                 margin: 8px 0;
@@ -491,11 +505,13 @@ img {
             a {
               text-transform: uppercase;
               position: relative;
+
               @media screen and (max-width: 1024px) {
-                border: solid 1px white;
-                padding: 6px 20px;
                 background: white;
+                border: solid 1px white;
                 color: $black;
+                font-size: 0.8rem;
+                padding: 6px 12px;
               }
 
               &::after {
@@ -529,6 +545,7 @@ img {
       [data-scene="gallery"] {
         display: none;
       }
+
       [data-scene="detail"]:not(.matched) {
         display: none;
       }
@@ -537,11 +554,13 @@ img {
         opacity: 0;
         visibility: hidden;
         height: 0;
+
         &.matched {
           opacity: 1;
           visibility: visible;
           height: 100%;
           padding: 10vh 0;
+
           @media screen and (max-width: 1024px) {
             padding-left: 20px;
             padding-right: 20px;
@@ -552,16 +571,20 @@ img {
       [data-item="one"] {
         background-color: #f4ead6;
       }
+
       [data-item="two"] {
         background-color: #dff4ff;
       }
+
       [data-item="three"] {
         background-color: #fffaf0;
       }
+
       [data-item="four"] {
         background-color: #ffe3a9cf;
       }
     }
+
     .detail_wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -573,6 +596,7 @@ img {
         font-style: italic;
         font-size: 7rem;
         margin: 0;
+
         @media screen and (max-width: 1024px) {
           font-size: 4rem;
           margin: 50px auto;
@@ -600,17 +624,20 @@ img {
           text-align: left;
           font-style: italic;
           font-size: 50px;
+
           @media screen and (max-width: 1024px) {
             font-size: 40px;
             font-weight: normal;
           }
         }
+
         p {
           font-family: auto;
           font-size: 26px;
           font-style: italic;
           line-height: 1.25em;
           text-align: left;
+
           @media screen and (max-width: 1024px) {
             font-size: 20px;
           }
@@ -621,12 +648,14 @@ img {
           justify-content: space-around;
           display: flex;
           height: 800px;
+
           @media screen and (max-width: 1024px) {
             margin-bottom: 0;
           }
 
           div {
             max-width: 350px;
+
             @media screen and (max-width: 1024px) {
               max-width: 200px;
             }
@@ -634,6 +663,7 @@ img {
             &:nth-child(2) {
               transform: rotate(10deg);
               align-self: end;
+
               @media screen and (max-width: 1024px) {
                 transform: none;
                 align-self: center;
@@ -647,19 +677,24 @@ img {
           display: flex;
           gap: 100px;
           padding: 100px 0 150px;
+
           @media screen and (max-width: 1024px) {
             display: block;
             padding: 0;
           }
+
           div {
             max-width: 400px;
+
             @media screen and (max-width: 1024px) {
               max-width: 250px;
             }
           }
+
           p {
             align-self: center;
             margin: 0;
+
             @media screen and (max-width: 1024px) {
               margin: 20px 0;
             }
@@ -672,10 +707,12 @@ img {
           height: 60vh;
           width: 100%;
           overflow: hidden;
+
           @media screen and (min-width: 1600px) {
             width: 100vw;
-            margin-left: calc((100vw - min(1200px, 100%))/-2);
+            margin-left: calc((100vw - min(1200px, 100%)) / -2);
           }
+
           @media screen and (max-width: 1024px) {
             padding: 100px 0;
             height: auto;
@@ -698,6 +735,7 @@ img {
             top: 60%;
             opacity: 0.3;
             letter-spacing: 1rem;
+
             @media screen and (max-width: 1024px) {
               font-size: 80px;
               margin-top: -200px;
@@ -712,6 +750,7 @@ img {
               opacity: 1;
             }
           }
+
           .items {
             display: flex;
             justify-content: space-between;
@@ -719,10 +758,12 @@ img {
             width: 100vw;
             position: absolute;
             left: 0;
+
             @media screen and (min-width: 1600px) {
               justify-content: space-around;
               margin: 0 auto;
             }
+
             @media screen and (max-width: 1024px) {
               gap: 10px;
               margin-top: 100px;
@@ -737,12 +778,15 @@ img {
               opacity: 0;
               transform: translateY(200px) rotate(-10deg);
               transition: all 0.6s cubic-bezier(0.5, 0, 0.5, 1);
+
               @media screen and (max-width: 1024px) {
                 max-width: 180px;
+
                 &:nth-child(2n) {
                   margin-top: 280px;
                 }
               }
+
               &.in_view {
                 opacity: 1;
                 transform: none;
@@ -751,15 +795,17 @@ img {
               .img_wrap {
                 overflow: hidden;
 
-                > img {
+                >img {
                   display: block;
                   animation: inherit;
                   animation-name: rotate-img;
                   transition: transform 0.8s cubic-bezier(0.5, 0, 0.5, 1);
+
                   @keyframes rotate-img {
                     from {
                       transform: scale(1.5) rotate(20deg);
                     }
+
                     to {
                       transform: none;
                     }
@@ -777,6 +823,7 @@ img {
         .next_link {
           display: flex;
           justify-content: space-between;
+
           @media screen and (max-width: 1024px) {
             margin: 150px 0 50px;
           }
@@ -788,6 +835,7 @@ img {
             pointer-events: all;
             cursor: pointer;
             transition: all 0.5s ease-in-out;
+
             &::after {
               content: "";
               position: absolute;
@@ -814,15 +862,22 @@ img {
             max-width: 400px;
             height: 400px;
             margin: 0 auto;
+
             @media screen and (max-width: 1024px) {
               display: none;
             }
           }
         }
       }
-    } // detail_wrapper
-  } // main
-} // wrapper
+    }
+
+    // detail_wrapper
+  }
+
+  // main
+}
+
+// wrapper
 
 @media screen and (max-width: 1024px) {
   .wrapper {

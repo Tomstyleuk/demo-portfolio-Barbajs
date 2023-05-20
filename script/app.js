@@ -30,6 +30,7 @@ if (window.innerWidth > 1025) {
   document.querySelector(".loading-animation").classList.add("loaded");
 }
 
+
 /**
  * Hero image animation
  */
@@ -46,28 +47,28 @@ const firstImgAnimate = () => {
       1.2,
       { opacity: "0", transform: "translateY(200px)" },
       { opacity: "1", transform: "translateY(0)", ease: Power2.easeInOut },
-      "-=0.3"
+      "-=0.8"
     )
     .fromTo(
       client,
-      1,
+      0.8,
       { opacity: "0", transform: "translateY(100px)" },
       { opacity: "1", transform: "translateY(0)", ease: Power2.easeInOut },
-      "-=0.5"
+      "-=0.7"
     )
     .fromTo(
       service,
-      1,
+      0.8,
       { opacity: "0", transform: "translateY(200px)" },
       { opacity: "1", transform: "translateY(0)", ease: Power2.easeInOut },
-      "-=0.6"
+      "-=0.7"
     )
     .fromTo(
       firstBtn,
       0.8,
       { opacity: "0", transform: "translateY(200px)" },
       { opacity: "1", transform: "translateY(0)", ease: Power2.easeInOut },
-      "-=0.6"
+      "-=0.65"
     );
 };
 
@@ -84,6 +85,7 @@ logo.addEventListener("click", () => {
   }
 });
 
+
 /**
  * Menu
  */
@@ -99,6 +101,7 @@ navOpen.addEventListener("click", () => {
     );
   });
 });
+
 
 /**
  * Flip
@@ -162,14 +165,12 @@ btn.forEach((i, index) => {
                 }
               }
 
-              // itemsWrapper.style.transform = `translateX(${scrollY / 5}px)`;
               collectionTitle.style.transform = `translateY(-${scrollY / 5}px)`;
 
               if (window.innerWidth < 1025) {
                 itemsWrapper.style.transform = `none`;
-                collectionTitle.style.transform = `translateY(${
-                  scrollY / 5
-                }px)`;
+                collectionTitle.style.transform = `translateY(${scrollY / 5
+                  }px)`;
               }
             });
 
@@ -209,12 +210,12 @@ btn.forEach((i, index) => {
         detailImg.style.transform = "none";
         tl.fromTo(
           detailTitle,
-          1.2,
-          { opacity: "0", transform: "scale(0)" },
+          1.05,
+          { opacity: "0", transform: "translateY(50px)" },
           {
             opacity: "1",
             width: "100%",
-            transform: "scale(1)",
+            transform: "translateY(0)",
             ease: Expo.easeInOut,
           }
         )
@@ -237,6 +238,7 @@ btn.forEach((i, index) => {
   });
 });
 
+
 /**
  * Detail page
  */
@@ -244,13 +246,15 @@ const items = document.querySelectorAll(".collection_wrapper .items figure");
 const targets = document.querySelectorAll(".detail_img");
 const options = {
   root: null,
-  rootMargin: "0px 0px -10% 0px",
+  rootMargin: "-40% 0px",
   threshold: 0,
 };
+
 const observer = new IntersectionObserver(eleInView, options);
 targets.forEach((t) => {
   observer.observe(t);
 });
+
 items.forEach((i) => {
   observer.observe(i);
 });
@@ -258,7 +262,8 @@ items.forEach((i) => {
 function eleInView(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("in_view");
+      entry.target.classList.toggle("in_view");
+      observer.unobserve(entry.target)
     }
   });
 }

@@ -1,0 +1,227 @@
+/******************
+Barba
+******************/
+.loading-screen {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background-color: #655f4d;
+  will-change: height;
+
+  /* Loading screen from left to right */
+  width: 100%;
+  /* Loading screen from top to bottom */
+  height: 0;
+}
+
+.load-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.load-img {
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 300px;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  will-change: opacity;
+  overflow: hidden;
+}
+
+.txt_wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  text-align: center;
+}
+
+.txt {
+  font-size: 5rem;
+  overflow: hidden;
+  color: white;
+  opacity: 0;
+  letter-spacing: 0.7rem;
+}
+
+.reveal_txt {
+  opacity: 1;
+  transform: translate3d(0, 110%, 0);
+  display: inline-block;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.reveal_txt.Fadein {
+  opacity: 1;
+  transform: translate3d(0, 0px, 0);
+}
+
+.reveal_txt.Fadeout {
+  transform: translate3d(0, -100%, 0);
+}
+
+@media screen and (max-width: 769px) {
+  .txt {
+    font-size: 50px;
+  }
+}
+
+/******************
+First Loading Animaion
+******************/
+.loading-animation {
+  height: 100vh;
+  width: 100vw;
+  background: #333333;
+  transition: all 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+}
+
+.loading-animation.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-animation,
+.loading-animation * {
+  box-sizing: border-box;
+}
+
+.loading-animation .spinner {
+  height: calc(65px / 7.5);
+  width: calc(65px / 7.5);
+  animation-duration: 2000ms;
+  top: 50%;
+  left: 50%;
+  background-color: #f2f252;
+  position: absolute;
+  animation-iteration-count: infinite;
+}
+
+.loading-animation .spinner.big {
+  height: calc(65px / 3);
+  width: calc(65px / 3);
+  animation: spinner-animation-child-big 2s infinite;
+  animation-delay: 0.5s;
+}
+
+.loading-animation .spinner:nth-child(2n + 0) {
+  margin-right: 0;
+}
+
+.loading-animation .spinner.child-1 {
+  animation-name: spinner-animation-child-1;
+  animation-delay: calc(100ms * 1);
+}
+
+.loading-animation .spinner.child-2 {
+  animation-name: spinner-animation-child-2;
+  animation-delay: calc(100ms * 2);
+}
+
+.loading-animation .spinner.child-3 {
+  animation-name: spinner-animation-child-3;
+  animation-delay: calc(100ms * 3);
+}
+
+.loading-animation .spinner.child-4 {
+  animation-name: spinner-animation-child-4;
+  animation-delay: calc(100ms * 4);
+}
+
+.loading-animation .spinner.child-5 {
+  animation-name: spinner-animation-child-5;
+  animation-delay: calc(100ms * 5);
+}
+
+.loading-animation .spinner.child-6 {
+  animation-name: spinner-animation-child-6;
+  animation-delay: calc(100ms * 6);
+}
+
+.loading-animation .spinner.child-7 {
+  animation-name: spinner-animation-child-7;
+  animation-delay: calc(100ms * 7);
+}
+
+.loading-animation .spinner.child-8 {
+  animation-name: spinner-animation-child-8;
+  animation-delay: calc(100ms * 8);
+}
+
+@keyframes spinner-animation-child-1 {
+  50% {
+    transform: translate(-325%, -325%);
+  }
+}
+
+@keyframes spinner-animation-child-2 {
+  50% {
+    transform: translate(0, -325%);
+  }
+}
+
+@keyframes spinner-animation-child-3 {
+  50% {
+    transform: translate(325%, -325%);
+  }
+}
+
+@keyframes spinner-animation-child-4 {
+  50% {
+    transform: translate(325%, 0);
+  }
+}
+
+@keyframes spinner-animation-child-5 {
+  50% {
+    transform: translate(325%, 325%);
+  }
+}
+
+@keyframes spinner-animation-child-6 {
+  50% {
+    transform: translate(0, 325%);
+  }
+}
+
+@keyframes spinner-animation-child-7 {
+  50% {
+    transform: translate(-325%, 325%);
+  }
+}
+
+@keyframes spinner-animation-child-8 {
+  50% {
+    transform: translate(-325%, 0);
+  }
+}
+
+@keyframes spinner-animation-child-big {
+  50% {
+    transform: scale(0.5);
+  }
+}

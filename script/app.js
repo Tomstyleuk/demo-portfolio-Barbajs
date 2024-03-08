@@ -285,12 +285,10 @@ barba.init({
         pageTransition();
         await delay(1000);
         await delay(backToPageTop());
-        console.log('async leave');
         done();
       },
 
       async enter(data) {
-        console.log('async enter');
         setupObserver();
         initNavAnimation();
 
@@ -309,10 +307,8 @@ barba.init({
             let loadImg = document.querySelector('.load-img');
             if (loadImg.getAttribute('src') === initialSrc) {
               loadImg.setAttribute('src', imgSrc);
-              console.log('initial img, async enter');
             } else if (loadImg.getAttribute('src') === imgSrc) {
               loadImg.setAttribute('src', initialSrc);
-              console.log('not the initial img, async enter');
             }
           });
         }
@@ -322,7 +318,6 @@ barba.init({
       },
 
       async once(data) {
-        console.log('async once');
         setupObserver();
         initNavAnimation();
 
@@ -340,10 +335,8 @@ barba.init({
 
             if (loadImg.getAttribute('src') === initialSrc) {
               loadImg.setAttribute('src', imgSrc);
-              console.log('initial img, async once');
             } else if (loadImg.getAttribute('src') === imgSrc) {
               loadImg.setAttribute('src', initialSrc);
-              console.log('not the initial img, async once');
             }
           });
         }

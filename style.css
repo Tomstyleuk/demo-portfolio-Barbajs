@@ -232,6 +232,7 @@ First Loading Animaion
 }
 body,
 html {
+  background: #fcfcfc;
   color: black;
   width: 100%;
   min-height: 100%;

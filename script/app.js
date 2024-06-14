@@ -225,7 +225,7 @@ function initNavAnimation() {
           main.style.zIndex = "2";
           overlay.style.zIndex = "-1";
           overlayMenu.style.zIndex = "-1";
-        }, 900);
+        }, 100);
       });
     } else {
       timeline.play();
@@ -320,6 +320,7 @@ barba.init({
       async once(data) {
         setupObserver();
         initNavAnimation();
+
 
         /******************
         * Click "Read more"

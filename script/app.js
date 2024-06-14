@@ -190,6 +190,8 @@ function clickLogoLoadingImage() {
 function initNavAnimation() {
   const toggleButton = document.querySelector(".burger");
   const menuLinks = document.querySelectorAll(".menu-item-link");
+  // const menuItems = document.querySelectorAll(".menu-item");
+  const menuItems = gsap.utils.toArray(".menu-item");
   const overlay = document.querySelector(".overlay");
   const overlayMenu = document.querySelector(".overlay-menu");
   const main = document.querySelector("main");
@@ -220,12 +222,15 @@ function initNavAnimation() {
     if (isOpen) {
       timeline.reverse();
       timeline.eventCallback("onReverseComplete", function () {
-        setTimeout(() => {
-          lenis.start()
-          main.style.zIndex = "2";
-          overlay.style.zIndex = "-1";
-          overlayMenu.style.zIndex = "-1";
-        }, 100);
+        // setTimeout(() => {
+        lenis.start()
+        overlayMenu.style.zIndex = "-1";
+        overlay.style.zIndex = "-1";
+        main.style.zIndex = "2";
+        menuItems.forEach(i => {
+          i.style.opacity = '0';
+        });
+        // }, 50);
       });
     } else {
       timeline.play();

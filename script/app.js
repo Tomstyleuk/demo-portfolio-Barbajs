@@ -217,19 +217,19 @@ function initNavAnimation() {
     stagger: 0.05
   }, "-=0.5");
 
+
+  // Click hamburger menu
   toggleButton.addEventListener("click", function () {
     if (isOpen) {
       timeline.reverse();
       timeline.eventCallback("onReverseComplete", function () {
-        // setTimeout(() => {
         lenis.start()
+        main.style.zIndex = "2";
+        overlayMenu.style.zIndex = "-1";
+        overlay.style.zIndex = "-1";
         menuItems.forEach(i => {
           i.style.opacity = '0';
         });
-        overlayMenu.style.zIndex = "-1";
-        overlay.style.zIndex = "-1";
-        main.style.zIndex = "2";
-        // }, 50);
       });
     } else {
       timeline.play();
@@ -244,6 +244,8 @@ function initNavAnimation() {
     }, 800);
   });
 
+
+  // Click links
   menuLinks.forEach(link => {
     const anchor = link.querySelector('a');
 

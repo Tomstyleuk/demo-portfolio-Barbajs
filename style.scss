@@ -100,7 +100,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  padding: 0 1em;
+  padding: 30px 1em;
 
   #logo {
     font-size: 2rem;
@@ -318,6 +318,10 @@ Home page
   z-index: 0;
   height: 100%;
   background: $home_bg_color;
+
+  @media screen and (max-width: 769px) {
+    margin-top: 26%;
+  }
 
   section.item {
     height: 100vh;
